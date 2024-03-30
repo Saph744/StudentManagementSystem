@@ -1,0 +1,87 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-primary">
+            <h4 class="card-title">Update student</h4>
+            <p class="card-category">Complete your student profile</p>
+          </div>
+          <div class="card-body">
+            <form #form="ngForm" (ngSubmit)="UpdateStudent()">
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="name">#Student</label>
+                  <input type="text" class="form-control" disabled name="studentID"
+                         id="studentID" [(ngModel)]="studentDetailsViewModel.studentID"
+                         #studentID="ngModel">
+                </div>
+                <div class="col-md-6">
+                  <label for="name">Student Name</label>
+                  <input type="text" class="form-control" placeholder="Student Name" name="name"
+                         id="name" [(ngModel)]="studentDetailsViewModel.name"
+                         #name="ngModel">
+                </div>
+                <div class="col-md-6">
+                  <label for="mobile">Phone number</label>
+                  <input placeholder="Phone number" type="text"
+                         name="mobile"
+                         [(ngModel)]="studentDetailsViewModel.mobile">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="birthDate">Date of birth</label>
+                  <input placeholder="Date of birth" type="date" name="birthDate"
+                         [(ngModel)]="studentDetailsViewModel.birthDate" #birthDate="ngModel">
+                </div>
+                <div class="col-md-6">
+                  <label for="address">Address</label>
+                  <input placeholder="Address" type="text" name="address"
+                         [(ngModel)]="studentDetailsViewModel.address" #address="ngModel">
+                </div>
+                <div class="col-md-6">
+                  <label for="email">Email address</label>
+                  <input placeholder="Email address" type="email" name="email"
+                         [(ngModel)]="studentDetailsViewModel.email" #email="ngModel">
+                </div>
+                <div class="col-md-6">
+                  <label for="email">Guardian name</label>
+                  <input placeholder="Guardian name" type="text" name="guardianName"
+                         [(ngModel)]="studentDetailsViewModel.guardianName" #guardianName="ngModel">
+                </div>
+                <div class="col-md-6">
+                  <select name="guardianType" [(ngModel)]="studentDetailsViewModel.guardianType">
+                    <option value="Father">Father</option>
+                    <option value="Mother">Mother</option>
+                    <option value="Siblings">Siblings</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label for="year">Year</label>
+                  <input placeholder="Year" type="date" name="year"
+                         [(ngModel)]="studentDetailsViewModel.year" #year="ngModel">
+                </div>
+                <div class="col-md-6">
+                  <label for="schoolCollege">School/College name</label>
+                  <input placeholder="School/College name" type="text" name="schoolCollege"
+                         [(ngModel)]="studentDetailsViewModel.schoolCollege" #schoolCollege="ngModel">
+                </div>
+                <div class="col-md-6">
+                  <label for="percentage">Percentage</label>
+                  <input placeholder="Percentage" type="text" name="percentage"
+                         [(ngModel)]="studentDetailsViewModel.percentage" #percentage="ngModel">
+                </div>
+              </div>
+              <button [disabled]="!form.valid" type="submit"
+                      class="btn btn-primary pull-right">
+                Save
+              </button>
+              <div class="clearfix"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,119 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-primary">
+            <h4 class="card-title">Add new student</h4>
+            <p class="card-category">Complete your student profile</p>
+          </div>
+          <div class="card-body">
+            <form #form="ngForm" (ngSubmit)="InsertStudent()">
+              <div class="row">
+
+                <div class="col-md-6">
+                  <label for="name">Student Name</label>
+                  <input type="text" class="form-control" placeholder="Student Name" name="name"
+                         id="name" [(ngModel)]="studentViewModel.name"
+                         #name="ngModel" required>
+                  <div *ngIf="name.invalid && (name.dirty || name.touched)"
+                       class="bg-info rounded p-2">
+                    Student Name field must be valid
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="mobile">Phone number</label>
+                  <input placeholder="Phone number" type="text"
+                         name="mobile"
+                         [(ngModel)]="studentViewModel.mobile" class="form-control">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="birthDate">Date of birth</label>
+                  <input placeholder="Date of birth" type="date" name="birthDate"
+                         [(ngModel)]="studentViewModel.birthDate" #birthDate="ngModel" class="form-control" required>
+                  <div *ngIf="birthDate.invalid && (birthDate.dirty || birthDate.touched)"
+                       class="bg-info rounded p-2">
+                    Date of birth field must be valid
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="address">Address</label>
+                  <input placeholder="Address" type="text" name="address"
+                         [(ngModel)]="studentViewModel.address" #address="ngModel" class="form-control" required>
+                  <div *ngIf="address.invalid && (address.dirty || address.touched)"
+                       class="bg-info rounded p-2">
+                    Address field must be valid
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="email">Email address</label>
+                  <input placeholder="Email address" type="email" name="email"
+                         [(ngModel)]="studentViewModel.email" #email="ngModel"
+                         class="form-control" required>
+                  <div *ngIf="email.invalid && (email.dirty || email.touched)"
+                       class="bg-info rounded p-2">
+                    Email Address field must be valid
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="email">Guardian name</label>
+                  <input placeholder="Guardian name" type="text" name="guardianName"
+                         [(ngModel)]="studentViewModel.guardianName" #guardianName="ngModel"
+                         class="form-control" required>
+                  <div *ngIf="guardianName.invalid && (guardianName.dirty || guardianName.touched)"
+                       class="bg-info rounded p-2">
+                    Guardian name field must be valid
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <select name="guardianType" [(ngModel)]="studentViewModel.guardianType">
+                    <option value="Father">Father</option>
+                    <option value="Mother">Mother</option>
+                    <option value="Siblings">Siblings</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label for="year">Year</label>
+                  <input placeholder="Year" type="date" name="year"
+                         [(ngModel)]="studentViewModel.year" #year="ngModel"
+                         class="form-control" required>
+                  <div *ngIf="year.invalid && (year.dirty || year.touched)"
+                       class="bg-info rounded p-2">
+                    Year field must be valid
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="schoolCollege">School/College name</label>
+                  <input placeholder="School/College name" type="text" name="schoolCollege"
+                         [(ngModel)]="studentViewModel.schoolCollege" #schoolCollege="ngModel"
+                         class="form-control" required>
+                  <div *ngIf="schoolCollege.invalid && (schoolCollege.dirty || schoolCollege.touched)"
+                       class="bg-info rounded p-2">
+                    School/College name field must be valid
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="percentage">Percentage</label>
+                  <input placeholder="Percentage" type="text" name="percentage"
+                         [(ngModel)]="studentViewModel.percentage" #percentage="ngModel"
+                         class="form-control" required>
+                  <div *ngIf="percentage.invalid && (percentage.dirty || percentage.touched)"
+                       class="bg-info rounded p-2">
+                    Percentage field must be valid
+                  </div>
+                </div>
+              </div>
+              <button [disabled]="!form.valid" type="submit"
+                      class="btn btn-danger pull-right">
+                Add Student
+              </button>
+              <div class="clearfix"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
